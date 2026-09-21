@@ -80,8 +80,7 @@ flowchart TD
     U -- Attempted Close, Still In Maintenance --> V([Blocked — Must Resolve First])
     U -- YES --> W([Workspace: Available or Decommissioned])
     R -- NO --> X([Closed Complete])
-    N --> Y([Nightly Sweeper — Auto Check-Out / Flag])
-    Y --> X
+    N --> X
     Q --> X
     W --> X
     X --> Z([END])
@@ -106,7 +105,6 @@ flowchart TD
     style H fill:#281d0a,stroke:#f59e0b,color:#fcd34d
     style K fill:#281d0a,stroke:#f59e0b,color:#fcd34d
     style N fill:#1c0f0f,stroke:#ef4444,color:#fca5a5
-    style Y fill:#141a28,stroke:#64748b,color:#94a3b8
     style S fill:#0e1f3a,stroke:#3b82f6,color:#93c5fd
     style F fill:#0e1f3a,stroke:#3b82f6,color:#93c5fd
     style L fill:#141a28,stroke:#64748b,color:#94a3b8
@@ -135,12 +133,11 @@ flowchart TD
 | 13 | Business Rules                                                    |
 | 14 | Notifications                                                     |
 | 15 | SLAs                                                               |
-| 16 | Scheduled Jobs                                                    |
-| 17 | Service Portal (Portal, Pages, Role-Restricted Navigation)         |
-| 18 | Custom Widget Development (Server Script, Angular Controller, HTML Template, CSS) |
-| 19 | Knowledge Articles                                                 |
-| 20 | Reports & Dashboards                                               |
-| 21 | Source Control                                                     |
+| 16 | Service Portal (Portal, Pages, Role-Restricted Navigation)         |
+| 17 | Custom Widget Development (Server Script, Angular Controller, HTML Template, CSS) |
+| 18 | Knowledge Articles                                                 |
+| 19 | Reports & Dashboards                                               |
+| 20 | Source Control                                                     |
 
 ---
 
@@ -180,9 +177,6 @@ WRM/
 │   │
 │   ├── script-includes/
 │   │   └── discord-notification.js
-│   │
-│   └── scheduled-jobs/
-│       └── reservation-lifecycle-sweeper.js
 │
 ├── portal-widgets/
 │   ├── available-workspaces/
@@ -254,6 +248,10 @@ WRM/
 
 ## Future Enhancements
 
+- **Scheduled cleanup job** — a nightly scheduled script to auto
+  check-out reservations whose booking window ended with no manual
+  check-out, and to flag overdue pending check-ins for agent review.
+  Designed, not yet implemented.
 - **CMDB/CI-linked availability** — tying each workspace to a supporting
   compute CI (bare-metal host, VM, cloud instance) so that infrastructure
   health automatically drives workspace availability, rather than relying
