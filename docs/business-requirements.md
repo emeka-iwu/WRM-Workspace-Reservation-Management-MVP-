@@ -59,11 +59,12 @@ them.
 
 ## Personas
 
-| Persona            | Role      | Access                                                          |
-| ------------------- | --------- | ----------------------------------------------------------------- |
-| Self Service User   | wrm_user  | Browse workspaces, submit reservation requests via portal, view own reservations |
-| Workplace Agent     | wrm_agent | Approve or reject requests, check reservations in and out, manage maintenance tickets |
-| Administrator       | wrm_admin | Full manage access to workspace inventory and configuration        |
+| Persona                | Role                       | Access                                                          |
+| ------------------------ | --------------------------- | ----------------------------------------------------------------- |
+| Self Service User       | wrm_user                    | Browse workspaces, submit reservation requests via portal, view own reservations |
+| Workplace Agent         | wrm_agent                   | Approve or reject requests, check reservations in and out          |
+| Maintenance Team Member | workspace_maintenance_user  | Manage maintenance tickets assigned to the Workspace Maintenance Team |
+| Administrator           | wrm_admin                   | Full manage access to workspace inventory and configuration        |
 
 ---
 
